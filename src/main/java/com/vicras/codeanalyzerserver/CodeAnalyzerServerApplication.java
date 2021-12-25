@@ -22,11 +22,11 @@ import static java.util.TimeZone.getTimeZone;
 @SpringBootApplication
 public class CodeAnalyzerServerApplication {
 
-    @Value("${database.url}")
+    @Value("${jdbc.database.url}")
     private String url;
-    @Value("${database.username}")
+    @Value("${jdbc.database.username}")
     private String username;
-    @Value("${database.password}")
+    @Value("${jdbc.database.password}")
     private String password;
 
     public static void main(String[] args) {
