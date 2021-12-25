@@ -53,7 +53,7 @@ public class AuthServiceImpl implements AuthService {
     public AuthTokenDto login(CredentialsDto cred) {
         AnalyzerUser user = userService.findUserByLogin(cred.login);
         if (encoder.matches(cred.getPassword(), user.getPassword())) {
-            return new AuthTokenDto(jwtService.getToken(user));
+            return new AuthTokenDto(jwtService.getToken(user), mapper.toResponse(user));
         }
         throw new AuthenticationException("Incorrect password or username");
     }

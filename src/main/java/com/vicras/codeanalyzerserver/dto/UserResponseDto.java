@@ -19,7 +19,6 @@ public class UserResponseDto {
     private String name;
     private String surname;
     private String login;
-    private String password;
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;

@@ -14,6 +14,7 @@ public abstract class UserMapper {
     public abstract UserResponseDto toResponse(AnalyzerUser user);
 
     @Mapping(target = "id", ignore = true)
+    @Mapping(target = "password", ignore = true)
     @Mapping(target = "updatedAt", ignore = true)
     @Mapping(target = "createdAt", ignore = true)
     public abstract AnalyzerUser toUser(UserResponseDto requestDto);
