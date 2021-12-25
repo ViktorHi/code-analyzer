@@ -32,6 +32,7 @@ dependencies {
 
 	//Security
 	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'io.jsonwebtoken:jjwt:0.7.0'
 
 	//Templates
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'

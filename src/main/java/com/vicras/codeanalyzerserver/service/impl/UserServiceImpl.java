@@ -44,4 +44,10 @@ public class UserServiceImpl implements UserService {
         return repository.findByLogin(login)
                 .orElseThrow(() -> new EntityNotFoundException(AnalyzerUser.class, login));
     }
+
+    @Override
+    public AnalyzerUser findUserById(Long id) {
+        return repository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException(AnalyzerUser.class, id.toString()));
+    }
 }

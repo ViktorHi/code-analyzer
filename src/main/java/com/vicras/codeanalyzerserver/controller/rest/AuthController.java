@@ -1,6 +1,8 @@
 package com.vicras.codeanalyzerserver.controller.rest;
 
 import com.vicras.codeanalyzerserver.dto.UserResponseDto;
+import com.vicras.codeanalyzerserver.dto.auth.AuthTokenDto;
+import com.vicras.codeanalyzerserver.dto.auth.CredentialsDto;
 import com.vicras.codeanalyzerserver.dto.auth.SignInDto;
 import com.vicras.codeanalyzerserver.service.AuthService;
 import lombok.RequiredArgsConstructor;
@@ -22,5 +24,10 @@ public class AuthController {
     @PostMapping("/sign-in")
     public UserResponseDto signIn(@Validated @RequestBody SignInDto dto) {
         return authService.signIn(dto);
+    }
+
+    @PostMapping("/login")
+    public AuthTokenDto signIn(@Validated @RequestBody CredentialsDto dto) {
+        return authService.login(dto);
     }
 }

@@ -21,3 +21,7 @@ spring:
     hibernate:
       ddl-auto: none
       use-new-id-generator-mappings: true
+token:
+  secret: ${"secret":AUTH_SECRET}
+  expire:
+    minutes: 60
