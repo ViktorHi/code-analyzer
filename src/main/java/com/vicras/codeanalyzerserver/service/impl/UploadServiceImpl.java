@@ -39,7 +39,7 @@ public class UploadServiceImpl implements UploadService {
         var file = performer.fromMultipartFile(multipartFile);
         var stat = analyzer.fromFile(file.toFile());
         var source = createSource(INTERNAL, file.getFileName().toString());
-        var doc = createDocument(source, user, multipartFile.getName(), stat.toString());
+        var doc = createDocument(source, user, multipartFile.getOriginalFilename(), stat.toString());
         return mapper.toResponse(documentRepository.save(doc));
     }
 
