@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Upload</title>
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/navigation.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/table.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/upload.css}"/>
+</head>
+
+<body class="flex">
+
+<div class="main">
+
+    <div class="navigation">
+        <a th:href="@{index}">Главная</a>
+        <a th:href="@{history}">История</a>
+        <a th:href="@{upload}">Загрузить</a>
+    </div>
+
+    <div class="content">
+        <div class="mainImage">
+            <img th:src="@{/images/meds.jpg}">
+        </div>
+
+        <div class="choice">
+            <div class="choiceBox">
+                <h3>Ссылка на репозиторий:</h3>
+                <form th:action="@{/upload/url}" method="post">
+                    <input type="text" name="link" value=""/>
+                    <input class="button" type="submit" value="Подтвердить"/>
+                </form>
+            </div>
+            <div class="choiceBox">
+                <h3>Загрузить архив:</h3>
+                <form method="POST" enctype="multipart/form-data" th:action="@{/upload/archive}">
+                    <input type="file" name="file" accept=".zip">
+                    <input type="submit" value="Загрузить">
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+
+</html>

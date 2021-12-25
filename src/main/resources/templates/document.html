@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/navigation.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/table.css}"/>
+</head>
+
+<body class="flex">
+
+<div class="main">
+
+    <div class="navigation">
+        <a th:href="@{/index}">Главная</a>
+        <a th:href="@{/history}">История</a>
+        <a th:href="@{/upload}">Загрузить</a>
+    </div>
+
+    <div class="content">
+        <h1>Статистика документа</h1>
+        <h1>"[[${document.getTitle()}]]"</h1>
+
+        Время создания:
+        <th:block th:text="${document.getCreatedAt().format(T(java.time.format.DateTimeFormatter).ofPattern('HH:mm, d MMM uuuu, EEE'))}">
+        </th:block>
+
+        <div th:if="${document.getType().name() == 'INTERNAL'}">
+            <form th:action="@{/api/download/document/{id}(id=${document.getId()})}" th:method="get">
+                <input th:type="submit" value="Download file">
+            </form>
+        </div>
+
+        <div th:if="${document.getType().name() == 'GIT'}">
+            <a th:href="${document.getLink()}">Repository link</a>
+        </div>
+
+        <h3>Document report</h3>
+        <code>[[${document.getStatistics()}]]
+        </code>
+
+    </div>
+</div>
+
+</body>
+
+</html>

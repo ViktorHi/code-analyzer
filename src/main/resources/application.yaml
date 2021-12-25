@@ -1,0 +1,23 @@
+spring:
+  thymeleaf:
+    cache: false
+    suffix: .html
+
+  application:
+    name: Code analyze API
+  flyway:
+    schemas: code-analyzer
+
+  jpa:
+    properties:
+      hibernate:
+        order_inserts: true
+        order_updates: true
+        jdbc:
+          batch_size: 5000
+          batch_versioned_data: true
+          fetch_size: 5000
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+      use-new-id-generator-mappings: true

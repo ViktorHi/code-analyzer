@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Main window</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/navigation.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/table.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/footer.css}"/>
+</head>
+
+<body class="flex">
+
+<div class="main">
+
+    <div class="navigation">
+        <a th:href="@{index}" >Главная</a>
+        <a th:href="@{history}">История</a>
+        <a th:href="@{upload}">Загрузить</a>
+        <a th:href="@{error}">Загрузить</a>
+    </div>
+
+    <div class="content">
+        <h1></h1>
+        <div class="mainImage">
+            <img th:src="@{/images/analyzer.png}">
+        </div>
+    </div>
+
+    <div class="footer">
+        <a th:href="@{signin}">Sign-in</a>
+        <a>|</a>
+        <a th:href="@{logout}">Logout</a>
+    </div>
+</div>
+
+</body>
+
+</html>
+

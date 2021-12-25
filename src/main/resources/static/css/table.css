@@ -1,0 +1,27 @@
+table {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 18px;
+    max-width: 100%;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    table-layout: fixed;
+}
+
+th {
+    font-weight: normal;
+    border-bottom: 2px solid #000000;
+    color: rgb(0, 0, 0);
+    padding: 8px 2px;
+}
+
+td {
+    font-weight: normal;
+    border-bottom: 2px solid #000000;
+    color: rgb(0, 0, 0);
+    padding: 8px 2px;
+}
+
+tr:hover td {
+    color: #000000;
+}

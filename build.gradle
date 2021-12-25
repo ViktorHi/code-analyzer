@@ -1,0 +1,83 @@
+plugins {
+	id 'org.springframework.boot' version '2.6.1'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.vicras'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	// Web
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
+	// Db
+	implementation 'org.flywaydb:flyway-core'
+	runtimeOnly 'org.postgresql:postgresql'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	annotationProcessor 'org.hibernate:hibernate-jpamodelgen'
+
+	//Security
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+
+	//Templates
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
+
+	// Lombok
+	implementation 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	// MapStruct
+	implementation 'org.mapstruct:mapstruct:1.4.2.Final'
+	annotationProcessor 'org.mapstruct:mapstruct-processor:1.4.2.Final'
+
+	// Util(Apache Commons)
+	implementation 'org.apache.commons:commons-lang3:3.12.0'
+
+	// Swagger
+//	implementation 'io.springfox:springfox-boot-starter:3.0.0'
+
+	// Analyzer
+// https://mvnrepository.com/artifact/fr.inria.gforge.spoon/spoon-core
+	implementation 'fr.inria.gforge.spoon:spoon-core:10.0.0'
+	// https://mvnrepository.com/artifact/org.eclipse.jgit/org.eclipse.jgit.ui
+	implementation 'org.eclipse.jgit:org.eclipse.jgit.ui:6.0.0.202111291000-r'
+	// https://mvnrepository.com/artifact/org.eclipse.jgit/org.eclipse.jgit.http.server
+	implementation 'org.eclipse.jgit:org.eclipse.jgit.http.server:6.0.0.202111291000-r'
+	// https://mvnrepository.com/artifact/commons-io/commons-io
+	implementation 'commons-io:commons-io:2.11.0'
+	implementation(files("Analyzer-lib.jar"))
+
+
+
+	// https://mvnrepository.com/artifact/org.eclipse.jgit/org.eclipse.jgit
+	implementation 'org.eclipse.jgit:org.eclipse.jgit:2.2.0.201212191850-r'
+
+
+	// Test
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.kafka:spring-kafka-test'
+	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+	testAnnotationProcessor 'org.mapstruct:mapstruct-processor:1.4.2.Final'
+	testAnnotationProcessor 'org.hibernate:hibernate-jpamodelgen'
+
+}
+
+test {
+	useJUnitPlatform()
+}

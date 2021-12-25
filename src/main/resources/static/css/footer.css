@@ -1,0 +1,27 @@
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.footer a{
+    color: #646464;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navigation a:hover {
+    background-color: #bbbbbb;
+    color: black;
+}
+
+.navigation a:active {
+    background-color: #c5c5c5;
+    color: white;
+}
+
