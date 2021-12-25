@@ -10,5 +10,4 @@ public interface DocumentService {
     DocumentResponseDto getDocumentById(Long id, Principal principal);
 
     List<DocumentResponseDto> getAllUserDocuments(Principal principal);
-
 }

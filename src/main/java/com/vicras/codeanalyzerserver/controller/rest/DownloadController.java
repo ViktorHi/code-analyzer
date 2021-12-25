@@ -1,6 +1,6 @@
 package com.vicras.codeanalyzerserver.controller.rest;
 
-import com.vicras.codeanalyzerserver.service.UploadService;
+import com.vicras.codeanalyzerserver.service.AnalysisService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.io.Resource;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +20,7 @@ import static org.springframework.http.MediaType.APPLICATION_OCTET_STREAM;
 @RequestMapping("/api/download")
 public class DownloadController {
 
-    private final UploadService uploadService;
+    private final AnalysisService uploadService;
 
     @GetMapping("/document/{id}")
     ResponseEntity<Resource> downloadFile(@PathVariable Long id, Principal user) {

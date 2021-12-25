@@ -8,7 +8,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.security.Principal;
 
-public interface UploadService {
+public interface AnalysisService {
     DocumentResponseDto fromArchive(MultipartFile file, Principal user);
 
     DocumentResponseDto fromUrl(String url, Principal user);

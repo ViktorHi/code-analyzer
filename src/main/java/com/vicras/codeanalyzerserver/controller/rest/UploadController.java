@@ -1,7 +1,7 @@
 package com.vicras.codeanalyzerserver.controller.rest;
 
 import com.vicras.codeanalyzerserver.dto.DocumentResponseDto;
-import com.vicras.codeanalyzerserver.service.UploadService;
+import com.vicras.codeanalyzerserver.service.AnalysisService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +16,7 @@ import java.security.Principal;
 @RequestMapping("/api/upload")
 public class UploadController {
 
-    private final UploadService uploadService;
+    private final AnalysisService uploadService;
 
     @PostMapping("/archive")
     public DocumentResponseDto fromArchive(@RequestParam("file") MultipartFile file,

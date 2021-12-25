@@ -8,17 +8,13 @@ import java.nio.file.Path;
 import java.util.UUID;
 
 @Component
-public class FileProvider {
+public class FileNamer {
 
     private static final String SERVER_LIB_FOLDER = "server_lib";
     private static final String SERVER_FILES_FOLDER = "files";
 
     public void createDirectory() {
         Path.of(System.getProperty("user.home"), SERVER_LIB_FOLDER, SERVER_FILES_FOLDER).toFile().mkdirs();
-    }
-
-    public Path fileDirectoryProvider() {
-        return Path.of(System.getProperty("user.home"), SERVER_LIB_FOLDER, SERVER_FILES_FOLDER);
     }
 
     public Path filePathProvider(String name) {

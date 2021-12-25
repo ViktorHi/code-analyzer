@@ -8,7 +8,7 @@ import com.vicras.codeanalyzerserver.exception.handler.system.ExceptionsHandler;
 import com.vicras.codeanalyzerserver.exception.model.ResponseError;
 import com.vicras.codeanalyzerserver.service.AuthService;
 import com.vicras.codeanalyzerserver.service.DocumentService;
-import com.vicras.codeanalyzerserver.service.UploadService;
+import com.vicras.codeanalyzerserver.service.AnalysisService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -28,7 +28,7 @@ import java.security.Principal;
 public class FrontController {
 
     private final AuthService authService;
-    private final UploadService uploadService;
+    private final AnalysisService uploadService;
     private final DocumentService documentService;
 
     private final ExceptionsHandler handlerFactory;

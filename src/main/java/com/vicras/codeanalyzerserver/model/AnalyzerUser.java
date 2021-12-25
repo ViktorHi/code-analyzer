@@ -26,5 +26,4 @@ public class AnalyzerUser extends BaseEntity {
     @Column(unique = true)
     private String login;
     private String password;
-
 }

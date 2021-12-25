@@ -7,5 +7,4 @@ import java.util.Optional;
 
 public interface AnalyzerUserRepository extends JpaRepository<AnalyzerUser, Long> {
     Optional<AnalyzerUser> findByLogin(String email);
-
 }

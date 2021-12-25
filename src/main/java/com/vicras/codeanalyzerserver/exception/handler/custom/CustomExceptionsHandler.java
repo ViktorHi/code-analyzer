@@ -1,11 +1,10 @@
 package com.vicras.codeanalyzerserver.exception.handler.custom;
 
 import com.vicras.codeanalyzerserver.exception.exceptions.business.EntityNotFoundException;
-import com.vicras.codeanalyzerserver.exception.exceptions.client.TargetServiceException;
+import com.vicras.codeanalyzerserver.exception.exceptions.security.AuthenticationException;
 import com.vicras.codeanalyzerserver.exception.handler.BaseExceptionHandler;
 import com.vicras.codeanalyzerserver.exception.model.ResponseError;
 import lombok.Getter;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
@@ -22,12 +21,8 @@ public class CustomExceptionsHandler extends BaseExceptionHandler {
     @Getter
     private final Map<Class<? extends Exception>, Function<Exception, ResponseEntity<ResponseError>>> handleExceptionMap = Map.of(
             EntityNotFoundException.class, exc -> handleEntityNotFoundException((EntityNotFoundException) exc),
-            TargetServiceException.class, exc -> handleOfferServiceException((TargetServiceException) exc)
+            AuthenticationException.class, this::handleAccessForbiddenException
     );
-
-    private ResponseEntity<ResponseError> handleOfferServiceException(TargetServiceException ex) {
-        return new ResponseEntity<>(ex.getResponseError(), HttpStatus.resolve(ex.getResponseError().getErrorCode()));
-    }
 
     private ResponseEntity<ResponseError> handleEntityNotFoundException(EntityNotFoundException exc) {
         return buildResponseError(exc.getMessage(), NOT_FOUND);

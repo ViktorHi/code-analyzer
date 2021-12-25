@@ -28,5 +28,4 @@ public class Document extends BaseEntity {
     private DocumentSource source;
     private String title;
     private String statistics;
-
 }
