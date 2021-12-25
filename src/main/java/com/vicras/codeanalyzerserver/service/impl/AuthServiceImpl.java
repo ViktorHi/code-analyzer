@@ -4,7 +4,7 @@ import com.vicras.codeanalyzerserver.dto.UserResponseDto;
 import com.vicras.codeanalyzerserver.dto.auth.AuthTokenDto;
 import com.vicras.codeanalyzerserver.dto.auth.CredentialsDto;
 import com.vicras.codeanalyzerserver.dto.auth.SignInDto;
-import com.vicras.codeanalyzerserver.exception.exceptions.AuthenticationException;
+import com.vicras.codeanalyzerserver.exception.exceptions.security.AuthenticationException;
 import com.vicras.codeanalyzerserver.exception.exceptions.business.UserExistException;
 import com.vicras.codeanalyzerserver.mapper.UserMapper;
 import com.vicras.codeanalyzerserver.model.AnalyzerUser;
