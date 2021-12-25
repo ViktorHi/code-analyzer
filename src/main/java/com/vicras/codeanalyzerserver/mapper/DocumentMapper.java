@@ -9,7 +9,6 @@ import com.vicras.codeanalyzerserver.model.SourceType;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-import java.security.Principal;
 import java.time.LocalDateTime;
 import java.util.List;
 

@@ -2,11 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Sign-in</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/navigation.css}"/>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/form.css}"/>
+    <link rel="stylesheet" th:href="@{/css/navigation.css}" type="text/css"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}" type="text/css"/>
+    <link rel="stylesheet" th:href="@{/css/form.css}" type="text/css"/>
 </head>
 
 <body class="flex">
@@ -20,7 +20,7 @@
     <div class="content">
         <h1>Введите данные нового пользователя</h1>
 
-        <form th:action="@{/sign-in}" method="post">
+        <form method="post" th:action="@{/sign-in}">
 
             <table>
                 <tr>
@@ -28,7 +28,7 @@
                         <p>Name:</p>
                     </td>
                     <td>
-                        <input type="text" name="name" value=""/>
+                        <input name="name" type="text" value=""/>
                     </td>
                 </tr>
                 <tr>
@@ -36,7 +36,7 @@
                         <p>Surname:</p>
                     </td>
                     <td>
-                        <input type="text" name="surname" value=""/>
+                        <input name="surname" type="text" value=""/>
                     </td>
                 </tr>
                 <tr>
@@ -44,7 +44,7 @@
                         <p>Login:</p>
                     </td>
                     <td>
-                        <input type="text" name="login" value=""/>
+                        <input name="login" type="text" value=""/>
                     </td>
                 </tr>
                 <tr>
@@ -52,9 +52,9 @@
                         <p>Password:</p>
                     </td>
                     <td>
-                        <input type="password" name="pass" value=""/>
+                        <input name="pass" type="password" value=""/>
                     </td>
-                </tr >
+                </tr>
                 <tr>
                     <td colspan="2"><input class="button" type="submit" value="Подтвердить"/></td>
                 </tr>

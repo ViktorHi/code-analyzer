@@ -2,12 +2,12 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Document</title>
 
-    <link rel="stylesheet" type="text/css" th:href="@{/css/navigation.css}"/>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/table.css}"/>
+    <link rel="stylesheet" th:href="@{/css/navigation.css}" type="text/css"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}" type="text/css"/>
+    <link rel="stylesheet" th:href="@{/css/table.css}" type="text/css"/>
 </head>
 
 <body class="flex">
@@ -25,7 +25,8 @@
         <h1>"[[${document.getTitle()}]]"</h1>
 
         Время создания:
-        <th:block th:text="${document.getCreatedAt().format(T(java.time.format.DateTimeFormatter).ofPattern('HH:mm, d MMM uuuu, EEE'))}">
+        <th:block
+                th:text="${document.getCreatedAt().format(T(java.time.format.DateTimeFormatter).ofPattern('HH:mm, d MMM uuuu, EEE'))}">
         </th:block>
 
         <div th:if="${document.getType().name() == 'INTERNAL'}">

@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/navigation.css}"/>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/form.css}"/>
+    <link rel="stylesheet" th:href="@{/css/navigation.css}" type="text/css"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}" type="text/css"/>
+    <link rel="stylesheet" th:href="@{/css/form.css}" type="text/css"/>
 </head>
 <body class="flex">
 
@@ -16,18 +16,19 @@
 
     <div class="content">
         <h1>Войдите в систему</h1>
-        <form name='f' action="login" method='POST' style="text-align: center">
+        <form action="login" method='POST' name='f' style="text-align: center">
             <table>
                 <tr>
                     <td>User:</td>
-                    <td><input type='text' name='username' value=''></td>
+                    <td><input name='username' type='text' value=''></td>
                 </tr>
                 <tr>
                     <td>Password:</td>
-                    <td><input type='password' name='password'/></td>
+                    <td><input name='password' type='password'/></td>
                 </tr>
                 <tr>
-                    <td colspan="2"><input name="submit" type="submit" value="Подтвердить"/></td><td></td>
+                    <td colspan="2"><input name="submit" type="submit" value="Подтвердить"/></td>
+                    <td></td>
                 </tr>
             </table>
         </form>

@@ -2,12 +2,12 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Main window</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/navigation.css}"/>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/table.css}"/>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/footer.css}"/>
+    <link rel="stylesheet" th:href="@{/css/navigation.css}" type="text/css"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}" type="text/css"/>
+    <link rel="stylesheet" th:href="@{/css/table.css}" type="text/css"/>
+    <link rel="stylesheet" th:href="@{/css/footer.css}" type="text/css"/>
 </head>
 
 <body class="flex">
@@ -15,7 +15,7 @@
 <div class="main">
 
     <div class="navigation">
-        <a th:href="@{index}" >Главная</a>
+        <a th:href="@{index}">Главная</a>
         <a th:href="@{history}">История</a>
         <a th:href="@{upload}">Загрузить</a>
     </div>

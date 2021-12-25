@@ -2,13 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>History</title>
 
-    <link rel="stylesheet" type="text/css" th:href="@{/css/navigation.css}"/>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/table.css}"/>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/list.css}"/>
+    <link rel="stylesheet" th:href="@{/css/navigation.css}" type="text/css"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}" type="text/css"/>
+    <link rel="stylesheet" th:href="@{/css/table.css}" type="text/css"/>
+    <link rel="stylesheet" th:href="@{/css/list.css}" type="text/css"/>
 </head>
 
 <body class="flex">
@@ -34,10 +34,10 @@
 
             <tr th:each="document : ${documents}">
                 <td>
-                    <img th:if="${document.getType().name() == 'INTERNAL'}" class="iconImage"
-                         th:src="@{/images/zip.png}" alt="zip">
-                    <img th:if="${document.getType().name() == 'GIT'}" class="iconImage"
-                         th:src="@{/images/github.jpg}" alt="zip">
+                    <img alt="zip" class="iconImage"
+                         th:if="${document.getType().name() == 'INTERNAL'}" th:src="@{/images/zip.png}">
+                    <img alt="zip" class="iconImage"
+                         th:if="${document.getType().name() == 'GIT'}" th:src="@{/images/github.jpg}">
                 </td>
 
                 <td>
