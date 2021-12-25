@@ -55,17 +55,6 @@ public class CodeAnalyzerServerApplication {
         return factory.createMultipartConfig();
     }
 
-//    @Bean
-//    public Docket api() {
-//        return new Docket(SWAGGER_2)
-//                .useDefaultResponseMessages(false)
-//                .select()
-//                .apis(RequestHandlerSelectors.any())
-//                .paths(PathSelectors.any())
-//                .build();
-//    }
-
-
     @PostConstruct
     public void setTimeZone() {
         TimeZone.setDefault(getTimeZone(MOSCOW_TIMEZONE));
