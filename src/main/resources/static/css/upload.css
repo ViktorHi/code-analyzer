@@ -1,11 +1,12 @@
-.choice{
+.choice {
     display: flex;
 }
-.choiceBox{
+
+.choiceBox {
     width: 50%;
     text-align: center;
     border-color: black;
-    border-style: solid ;
+    border-style: solid;
     margin: 15px;
     padding: 10px;
 }
