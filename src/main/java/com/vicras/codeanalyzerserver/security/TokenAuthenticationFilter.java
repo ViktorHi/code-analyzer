@@ -40,7 +40,7 @@ public class TokenAuthenticationFilter extends GenericFilterBean {
 
             AnalyzerUser user = userService.findUserById(userId);
             SecurityContextHolder.getContext().setAuthentication(new UsernamePasswordAuthenticationToken(
-                    user.getId(), "", null
+                    user.getLogin(), "", null
             ));
         } catch (Exception ignore) {
         }
