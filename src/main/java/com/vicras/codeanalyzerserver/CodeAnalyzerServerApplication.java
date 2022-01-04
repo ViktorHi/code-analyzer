@@ -2,9 +2,14 @@ package com.vicras.codeanalyzerserver;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+import org.apache.catalina.Context;
+import org.apache.tomcat.util.http.Rfc6265CookieProcessor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.embedded.tomcat.TomcatContextCustomizer;
+import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
+import org.springframework.boot.web.server.WebServerFactoryCustomizer;
 import org.springframework.boot.web.servlet.MultipartConfigFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.task.SimpleAsyncTaskExecutor;
@@ -63,5 +68,14 @@ public class CodeAnalyzerServerApplication {
     @Bean
     public Executor taskExecutor() {
         return new SimpleAsyncTaskExecutor();
+    }
+
+    @Bean
+    WebServerFactoryCustomizer<TomcatServletWebServerFactory> cookieProcessorCustomizer() {
+        return tomcatServletWebServerFactory -> tomcatServletWebServerFactory.addContextCustomizers(context -> {
+            Rfc6265CookieProcessor processor=new Rfc6265CookieProcessor();
+            processor.setSameSiteCookies("strict");
+            context.setCookieProcessor(processor);
+        });
     }
 }
