@@ -39,20 +39,20 @@ public class FrontController {
         return "index";
     }
 
-    @RequestMapping("/upload")
-    public String getUpload() {
-        return "upload";
-    }
+//    @RequestMapping("/upload")
+//    public String getUpload() {
+//        return "upload";
+//    }
 
     @RequestMapping("/signin")
     public String getSignIn() {
         return "signin";
     }
 
-    @RequestMapping("/login")
-    public String getLogin() {
-        return "login";
-    }
+//    @RequestMapping("/login")
+//    public String getLogin() {
+//        return "login";
+//    }
 
     @RequestMapping("/document/{id}")
     public String getDocument(@PathVariable Long id, Principal user, Model model) {
@@ -61,12 +61,12 @@ public class FrontController {
         return "document";
     }
 
-    @RequestMapping("/history")
-    public String getHistory(Model model, Principal user) {
-        var docs = documentService.getAllUserDocuments(user);
-        model.addAttribute("documents", docs);
-        return "history";
-    }
+//    @RequestMapping("/history")
+//    public String getHistory(Model model, Principal user) {
+//        var docs = documentService.getAllUserDocuments(user);
+//        model.addAttribute("documents", docs);
+//        return "history";
+//    }
 
     @PostMapping("/upload/archive")
     public RedirectView fromArchive(@RequestParam("file") MultipartFile file, Principal user) {

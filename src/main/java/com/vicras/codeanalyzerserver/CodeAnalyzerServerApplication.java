@@ -70,12 +70,4 @@ public class CodeAnalyzerServerApplication {
         return new SimpleAsyncTaskExecutor();
     }
 
-    @Bean
-    WebServerFactoryCustomizer<TomcatServletWebServerFactory> cookieProcessorCustomizer() {
-        return tomcatServletWebServerFactory -> tomcatServletWebServerFactory.addContextCustomizers(context -> {
-            Rfc6265CookieProcessor processor=new Rfc6265CookieProcessor();
-            processor.setSameSiteCookies("strict");
-            context.setCookieProcessor(processor);
-        });
-    }
 }
